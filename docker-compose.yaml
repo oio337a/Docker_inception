@@ -24,6 +24,8 @@ services:
   wordpress:
     image: debian:buster
     restart: always
+    depends_on:
+      - mariadb
     volumes:
       - data:/var/www/html
     expose:
