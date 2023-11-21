@@ -2,8 +2,8 @@ NAME = Inception
 DOCKER_COMPOSE_PATH = ./srcs/docker-compose.yml
 
 all:
-	mkdir -p /home/yongmin/data/db-data
-	mkdir -p /home/yongmin/data/wp-data
+	mkdir -p /Users/yongmin/data/db-data
+	mkdir -p /Users/yongmin/data/wp-data
 	docker-compose -f ${DOCKER_COMPOSE_PATH} build
 # 도커파일로 이미지를 빌드
 	make up
@@ -24,7 +24,7 @@ fclean:
 	make clean
 	docker-compose -f ${DOCKER_COMPOSE_PATH} down --volumes
 # 컨테이너와 함께 볼륨 제거
-	rm -rf /home/yongmin/data
+	rm -rf /Users/yongmin/data
 
 re:
 	make fclean
