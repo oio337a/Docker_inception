@@ -17,3 +17,4 @@ EOF
 # mysql DB서버 초기화를 위해 --bootstrap 옵션과 함께 실행. 위 스크립트를 사용하여 DB 설정
 /usr/bin/mysqld -u mysql
 # 초기화된 MySQL DB 서버를 실행. mysql 사용자로 실행한다.
+# -u 옵션은 사용자를 지정하는 옵션으로, mysql 사용자를 지정한다.
