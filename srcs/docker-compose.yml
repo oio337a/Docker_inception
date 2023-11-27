@@ -3,18 +3,24 @@ version: '3'
 services:
   nginx:
     container_name: nginx
+    # 컨테이너 이름
     image: nginx
+    # 이미지 이름
     pull_policy: never
+    # 이미지를 가져오는 경로
     build: ./requirements/nginx
     # 이미지 빌드 시 참조할 도커파일의 경로
     ports:
       - '443:443'
+    # 호스트 포트 : 컨테이너 포트
     networks:
       - inception
+    # 컨테이너가 속할 네트워크 명시
     volumes:
       - wp-volume:/var/www/
     # 볼륨폴더명 : 컨테이너 내 경로. 이제 컨테이너 재구동 시에도 데이터가 유지된다.
     restart: always
+    # 컨테이너 재구동 시에도 재시작
 
   mariadb:
     container_name: mariadb
@@ -23,6 +29,7 @@ services:
     build: ./requirements/mariadb
     env_file:
       - .env
+    # .env 파일을 참조하여 환경변수를 설정한다.
     networks:
       - inception
     volumes:
