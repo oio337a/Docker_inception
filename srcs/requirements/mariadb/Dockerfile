@@ -11,7 +11,7 @@ COPY ./conf/create_db.sh /tmp/create_db.sh
 # 컨테이너 내부 경로로 복사
 RUN chown -R mysql:mysql /run/mysqld
 
-RUN  sed -i "s/skip-networking/skip-networking=0/g" /etc/my.cnf.d/mariadb-server.cnf
+RUN sed -i "s/skip-networking/skip-networking=0/g" /etc/my.cnf.d/mariadb-server.cnf
 # MariaDB 서버 설정 파일 수정, 네트워크 연결 가능
 RUN sed -i "s/.*bind-address\s*=.*/bind-address=0.0.0.0/g" /etc/my.cnf.d/mariadb-server.cnf
 # bind-address 옵션 수정, 모든 IP 주소로부터의 연결 수락
