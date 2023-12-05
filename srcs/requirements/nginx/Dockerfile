@@ -15,10 +15,10 @@ RUN  openssl req -x509 \
      -days 365 \
      -newkey rsa:2048 \
 # 365일 유효기간, 2048비트 RSA키
-     -keyout /etc/ssl/private/yongmin.42.fr.key \
-     -out /etc/ssl/certs/yongmin.42.fr.crt \
+     -keyout /etc/ssl/private/yongmipa.42.fr.key \
+     -out /etc/ssl/certs/yongmipa.42.fr.crt \
 # 개인키 & 인증서
-     -subj "/C=KR/ST=Seoul/L=Gaepo/O=42Seoul/OU=Develop/CN=yongmin"
+     -subj "/C=KR/ST=Seoul/L=Gaepo/O=42Seoul/OU=Develop/CN=yongmipa"
 # 인증서에 포함될 정보 :  국가(C), 지역(ST), 조직(O), 부서(OU), 일반 이름(CN)
 
 EXPOSE 443
